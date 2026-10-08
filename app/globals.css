@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
+/* Phones and narrow windows */
+@custom-variant narrow (@media (max-width: 900px));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #111216; --bg2: #0d0e11; --fg: #f5f5f7; --mut: #9a9ba5; --dim: #6b6c76;
+  --line: #26272d; --blue: #6b9bff; --inv: #fff; --invt: #111216;
+  color-scheme: dark;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #fafafb; --bg2: #f0f0f3; --fg: #111216; --mut: #55565f; --dim: #85868f;
+    --line: #dcdce2; --blue: #2f5fe0; --inv: #111216; --invt: #fff; color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #fafafb; --bg2: #f0f0f3; --fg: #111216; --mut: #55565f; --dim: #85868f;
+  --line: #dcdce2; --blue: #2f5fe0; --inv: #111216; --invt: #fff; color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #111216; --bg2: #0d0e11; --fg: #f5f5f7; --mut: #9a9ba5; --dim: #6b6c76;
+  --line: #26272d; --blue: #6b9bff; --inv: #fff; --invt: #111216; color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg2: var(--bg2);
+  --color-fg: var(--fg);
+  --color-mut: var(--mut);
+  --color-dim: var(--dim);
+  --color-line: var(--line);
+  --color-blue: var(--blue);
+  --color-inv: var(--inv);
+  --color-invt: var(--invt);
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility lbl {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
+@utility wide { font-stretch: 125%; }
+@utility wide-md { font-stretch: 115%; }
 
+html { scroll-padding-top: 60px; scrollbar-width: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+html:not(.ss) { scroll-behavior: smooth; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--bg2);
+  color: var(--fg);
+  font-family: Archivo, system-ui, sans-serif;
+  line-height: 1.6;
 }
+
+/* Scroll ruler: animate ticks only while it expands or collapses */
+.sw [data-t], .sw [data-n], .sw [data-m] { transition: top 0.5s cubic-bezier(0.3, 0.8, 0.3, 1); }
