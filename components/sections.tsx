@@ -25,10 +25,10 @@ export function Hero() {
           I build web, mobile and <Accent>AI</Accent> projects that ship.
         </h1>
         <p className="mx-auto mb-[38px] max-w-[560px] text-[19px] text-mut">
-          Computer science student at Universitas Tarumanagara. Full-stack apps with Next.js and Flutter, computer vision research, and Linux systems (RHCSA). Looking for an IT internship.
+          Computer science student at Universitas Tarumanagara. Full-stack apps with Next.js, computer vision research, and Linux systems. Looking for an IT internship.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
-          <Btn href={LINKS.cv} filled className="narrow:flex-auto">↓ Request CV</Btn>
+          <Btn href={LINKS.cvId} filled className="narrow:flex-auto">↓ See My CV</Btn>
           <Btn href={LINKS.github} external className="narrow:flex-auto">GitHub</Btn>
           <Btn href={LINKS.linkedin} external className="narrow:flex-auto">LinkedIn</Btn>
         </div>
@@ -114,9 +114,8 @@ export function Background() {
         <div className="border-r border-line px-10 py-12 narrow:border-r-0 narrow:px-5 narrow:py-9">
           <span className="lbl text-dim">Resume</span>
           <h2 className="wide pb-4 pt-3.5 text-[40px] font-bold leading-[1.05] tracking-[-.03em]">Get my <Accent>CV</Accent>.</h2>
-          <p className="mb-[22px] text-mut">Available on request in English or Indonesian.</p>
-          <a href={LINKS.cvEn} className={row}><span>CV (English)<br /><small className="font-mono text-dim">send by email</small></span><span>→</span></a>
-          <a href={LINKS.cvId} className={row}><span>CV (Bahasa Indonesia)<br /><small className="font-mono text-dim">send by email</small></span><span>→</span></a>
+          <a href={LINKS.cvEn} download={LINKS.cvEn} className={row}><span>CV (English)<br /></span><span>→</span></a>
+          <a href={LINKS.cvId} download={LINKS.cvId} className={row}><span>CV (Indonesian)<br /></span><span>→</span></a>
         </div>
         <div className="px-10 py-12 narrow:px-5 narrow:py-9">
           <span className="lbl text-dim">Toolbox</span>
@@ -144,7 +143,7 @@ export function MoreWork() {
             key={m.title}
             href={m.href}
             style={{ "--cc": m.color } as CSSProperties}
-            className="group relative block border-b border-r border-line bg-bg transition-[transform,box-shadow] duration-[400ms] ease-[cubic-bezier(.2,.8,.2,1)] before:absolute before:inset-x-0 before:-top-px before:z-[2] before:h-[3px] before:origin-left before:scale-x-0 before:bg-(--cc) before:transition-transform before:duration-[550ms] before:ease-[cubic-bezier(.2,.8,.2,1)] last:border-r-0 hover:z-[3] hover:before:scale-x-100 motion-safe:hover:scale-[1.025] motion-safe:hover:shadow-[0_18px_50px_-20px_rgba(0,0,0,.55)] narrow:border-r-0"
+            className="group relative block border-b border-r border-line bg-bg transition-[transform,box-shadow] duration-[400ms] ease-[cubic-bezier(.2,.8,.2,1)] before:absolute before:inset-x-0 before:-top-px before:z-[2] before:h-[3px] before:origin-left before:scale-x-0 before:bg-(--cc) before:transition-transform before:duration-[550ms] before:ease-[cubic-bezier(.2,.8,.2,1)] last:border-r-0 hover:z-[3] hover:before:scale-x-100  motion-safe:hover:shadow-[0_18px_50px_-20px_rgba(0,0,0,.55)] narrow:border-r-0"
           >
             <div className="lbl flex items-center justify-between px-6 py-4 text-dim narrow:px-5">
               <i className="px-2 py-[5px] not-italic text-white" style={{ background: m.color }}>{m.n}</i><span>{m.tag}</span>

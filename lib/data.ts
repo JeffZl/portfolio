@@ -4,8 +4,8 @@ export const LINKS = {
   email: "mailto:jeffly291@gmail.com",
   emailText: "jeffly291@gmail.com",
   cv: "mailto:jeffly291@gmail.com?subject=CV%20request",
-  cvEn: "mailto:jeffly291@gmail.com?subject=CV%20request%20(English)",
-  cvId: "mailto:jeffly291@gmail.com?subject=CV%20request%20(Indonesian)",
+  cvId: "/Jeffly_CV.pdf",
+  cvEn: "/Jeffly_CV_English.pdf",
 };
 
 export const NAV = [
@@ -89,7 +89,7 @@ export const MORE = [
 
 export const FOOTER = [
   { title: "Navigate", links: [["Home", "#top"], ["Skills", "#highlights"], ["Projects", "#screens"], ["Background", "#get"]] },
-  { title: "Projects", links: [["Taxelling", "#screens"], ["WanderWhale", "#screens"], ["Cirqulate", "#screens"]] },
+  { title: "Projects", links: [["Taxelling", "https://github.com/thendy18/prototype-pph21"], ["WanderWhale", "https://github.com/Llorente14/Wanderwhale"], ["Cirqulate", "https://github.com/JeffZl/frontenduas"]] },
   { title: "More", links: [["Research", "#family"], ["Point of sale", "#family"], ["Certificates", "#get"]] },
   { title: "Social", links: [["GitHub", LINKS.github], ["LinkedIn", LINKS.linkedin], ["Email", LINKS.email]] },
 ];

@@ -13,7 +13,7 @@ export default function Nav() {
       <span className="flex-1" />
       <a href="#family" className={`${cell} lbl border-l text-mut hover:text-fg narrow:hidden`}>More work</a>
       <ThemeToggle />
-      <a href={LINKS.cv} className="lbl flex items-center bg-inv px-[18px] text-invt">Request CV</a>
+      <a href={LINKS.cvId} className="lbl flex items-center bg-inv px-[18px] text-invt">See My CV</a>
     </nav>
   );
 }
