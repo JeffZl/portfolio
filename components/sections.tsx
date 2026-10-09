@@ -11,28 +11,28 @@ export function Hero() {
       <SectionBar n="01" title="Portfolio" right="Internship candidate · Open to work" />
       <section className="border-b border-line px-10 pb-14 pt-20 text-center narrow:px-5 narrow:pb-10 narrow:pt-14">
         {/* Replace this placeholder with your photo, e.g. <Image src="/photo.jpg" ... /> */}
-        <div className="mx-auto mb-[22px] grid size-52 place-items-center overflow-hidden rounded-xl bg-[linear-gradient(160deg,#3b6cf5,#1d3a8a)] ring-1 ring-line">
+        <div style={{ "--d": 0 } as CSSProperties} className="rise mx-auto mb-[22px] grid size-52 place-items-center overflow-hidden rounded-xl bg-[linear-gradient(160deg,#3b6cf5,#1d3a8a)] ring-1 ring-line">
           <svg viewBox="0 0 100 100" className="size-full" role="img" aria-label="Photo placeholder">
             <circle cx="50" cy="38" r="16" fill="rgba(255,255,255,.85)" />
             <path d="M16 100C16 72 34 62 50 62s34 10 34 38z" fill="rgba(255,255,255,.85)" />
           </svg>
         </div>
-        <div className="wide-md inline-flex items-center gap-3 text-2xl font-bold">
+        <div style={{ "--d": 1 } as CSSProperties} className="rise wide-md inline-flex items-center gap-3 text-2xl font-bold">
           <i className="lbl bg-[#2563eb] px-2 py-[5px] not-italic text-white">01</i>
           <div>Jeff<span className="text-blue">ly</span></div>
         </div>
-        <h1 className="wide mx-auto mb-7 mt-[34px] max-w-[860px] text-[clamp(38px,6vw,72px)] font-bold leading-[1.05] tracking-[-.03em]">
+        <h1 style={{ "--d": 2 } as CSSProperties} className="rise wide mx-auto mb-7 mt-[34px] max-w-[860px] text-[clamp(38px,6vw,72px)] font-bold leading-[1.05] tracking-[-.03em]">
           I build web, mobile and <Accent>AI</Accent> projects that ship.
         </h1>
-        <p className="mx-auto mb-[38px] max-w-[560px] text-[19px] text-mut">
-          Computer science student at Universitas Tarumanagara. Full-stack apps with Next.js, computer vision research, and Linux systems. Looking for an IT internship.
+        <p style={{ "--d": 3 } as CSSProperties} className="rise mx-auto mb-[38px] max-w-[560px] text-[19px] text-mut">
+          Computer science student at Universitas Tarumanagara. Full-stack apps with Next.js and Flutter, computer vision research, and Linux systems (RHCSA). Looking for an IT internship.
         </p>
-        <div className="flex flex-wrap justify-center gap-3">
-          <Btn href={LINKS.cvId} filled className="narrow:flex-auto">↓ See My CV</Btn>
+        <div style={{ "--d": 4 } as CSSProperties} className="rise flex flex-wrap justify-center gap-3">
+          <Btn href={LINKS.cvId} download="Jeffly_CV.pdf" filled className="narrow:flex-auto">↓ Download CV</Btn>
           <Btn href={LINKS.github} external className="narrow:flex-auto">GitHub</Btn>
           <Btn href={LINKS.linkedin} external className="narrow:flex-auto">LinkedIn</Btn>
         </div>
-        <div className="lbl mt-[34px] grid gap-[22px] text-dim">
+        <div style={{ "--d": 5 } as CSSProperties} className="rise lbl mt-[34px] grid gap-[22px] text-dim">
           <span>Other ways to reach me ↓</span>
           <span>Jakarta, Indonesia · Open to IT internships</span>
           <div className="lbl mx-auto inline-flex max-w-full flex-wrap border border-line">
@@ -58,9 +58,9 @@ export function Skills() {
       <SectionTitle>What I <Accent>bring</Accent>.</SectionTitle>
       <div className="grid grid-cols-3 border-t border-line narrow:grid-cols-1">
         {SKILLS.map((s, i) => (
-          <div key={s.title} className="border-b border-r border-line px-8 pb-9 pt-10 [&:nth-child(3n)]:border-r-0 narrow:border-r-0 narrow:px-5 narrow:py-7">
+          <div key={s.title} style={{ "--i": i % 3 } as CSSProperties} className="reveal group border-b border-r border-line px-8 pb-9 pt-10 transition-colors duration-300 hover:bg-fg/[.03] [&:nth-child(3n)]:border-r-0 narrow:border-r-0 narrow:px-5 narrow:py-7">
             <span className="lbl mb-[22px] block text-right text-dim">{String(i + 1).padStart(2, "0")}</span>
-            <h3 className="wide-md mb-3.5 text-[25px] font-bold tracking-[-.02em]">{s.title}</h3>
+            <h3 className="wide-md mb-3.5 text-[25px] font-bold tracking-[-.02em] transition-colors duration-300 group-hover:text-blue">{s.title}</h3>
             <p className="text-mut">{s.body}</p>
           </div>
         ))}
@@ -75,7 +75,7 @@ export function Projects() {
       <SectionBar n="03" title="Projects" right="Selected work" />
       <div className="grid grid-cols-2 narrow:grid-cols-1">
         {PROJECTS.map((p, i) => (
-          <figure key={p.caption} className={`m-0 border-b border-line ${i === 0 ? "col-span-2 narrow:col-span-1" : ""} ${i === 1 ? "border-r narrow:border-r-0" : ""}`}>
+          <figure key={p.caption} style={{ "--i": i === 2 ? 1 : 0 } as CSSProperties} className={`reveal m-0 border-b border-line ${i === 0 ? "col-span-2 narrow:col-span-1" : ""} ${i === 1 ? "border-r narrow:border-r-0" : ""}`}>
             <div className="lbl flex justify-between gap-3 border-b border-line px-10 py-[18px] text-mut narrow:px-5">
               <span>{p.caption}</span><span>{String(i + 1).padStart(2, "0")}</span>
             </div>
@@ -97,11 +97,13 @@ export function Background() {
     <section id="get">
       <SectionBar n="04" title="Background" right="Education · Certificates" />
       <div className="grid grid-cols-3 border-b border-line narrow:grid-cols-1">
-        {BACKGROUND.map((c) => (
-          <div key={c.label} className="flex flex-col border-r border-line px-8 pb-8 pt-7 last:border-r-0 narrow:border-r-0 narrow:px-5 narrow:py-6">
+        {BACKGROUND.map((c, i) => (
+          <div key={c.label} style={{ "--i": i } as CSSProperties} className="reveal flex flex-col border-r border-line px-8 pb-8 pt-7 last:border-r-0 narrow:border-r-0 narrow:px-5 narrow:py-6">
             <div className="lbl mb-[30px] flex justify-between text-dim"><span>{c.label}</span></div>
             <h3 className="wide mb-4 flex items-center gap-3.5 text-[30px] font-bold">
-              <span className="grid size-10 place-items-center border border-line text-lg">{c.icon}</span>{c.title}
+              <span className="grid size-10 place-items-center border border-line">
+  <c.icon className="size-5" strokeWidth={1.75} />
+</span>{c.title}
             </h3>
             {c.lines.map((l, i) => (
               <p key={l} className={`mb-[22px] mt-0.5 ${c.strong && i === 0 ? "font-semibold text-fg" : "text-mut"}`}>{l}</p>
@@ -110,7 +112,7 @@ export function Background() {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-2 narrow:grid-cols-1">
+        <div className="grid grid-cols-2 narrow:grid-cols-1">
         <div className="border-r border-line px-10 py-12 narrow:border-r-0 narrow:px-5 narrow:py-9">
           <span className="lbl text-dim">Resume</span>
           <h2 className="wide pb-4 pt-3.5 text-[40px] font-bold leading-[1.05] tracking-[-.03em]">Get my <Accent>CV</Accent>.</h2>
@@ -120,7 +122,6 @@ export function Background() {
         <div className="px-10 py-12 narrow:px-5 narrow:py-9">
           <span className="lbl text-dim">Toolbox</span>
           <h2 className="wide pb-4 pt-3.5 text-[40px] font-bold leading-[1.05] tracking-[-.03em]">My <Accent>stack</Accent>.</h2>
-          <p className="mb-[22px] text-mut">What I work with day to day:</p>
           <div className="mb-[22px] border border-line bg-bg2">
             <div className="lbl flex justify-between border-b border-line px-4 py-3 text-dim"><span>＞_ Terminal</span><span>Stack</span></div>
             <pre className="m-0 overflow-x-auto px-4 py-[18px] font-mono text-[13px] leading-[1.9] narrow:whitespace-pre-wrap narrow:break-all narrow:text-xs">{STACK}</pre>
@@ -138,22 +139,22 @@ export function MoreWork() {
       <SectionBar n="05" title="More work" right="Research · Client work" />
       <SectionTitle>More from <Accent>my desk</Accent>.</SectionTitle>
       <div className="grid grid-cols-3 border-t border-line narrow:grid-cols-1">
-        {MORE.map((m) => (
+        {MORE.map((m, i) => (
           <a
             key={m.title}
             href={m.href}
-            style={{ "--cc": m.color } as CSSProperties}
-            className="group relative block border-b border-r border-line bg-bg transition-[transform,box-shadow] duration-[400ms] ease-[cubic-bezier(.2,.8,.2,1)] before:absolute before:inset-x-0 before:-top-px before:z-[2] before:h-[3px] before:origin-left before:scale-x-0 before:bg-(--cc) before:transition-transform before:duration-[550ms] before:ease-[cubic-bezier(.2,.8,.2,1)] last:border-r-0 hover:z-[3] hover:before:scale-x-100  motion-safe:hover:shadow-[0_18px_50px_-20px_rgba(0,0,0,.55)] narrow:border-r-0"
+            style={{ "--cc": m.color, "--i": i } as CSSProperties}
+            className="reveal group relative block border-b border-r border-line bg-bg before:absolute before:inset-x-0 before:-top-px before:z-[2] before:h-[3px] before:origin-left before:scale-x-0 before:bg-(--cc) before:transition-transform before:duration-[550ms] before:ease-[cubic-bezier(.2,.8,.2,1)] last:border-r-0 hover:before:scale-x-100 narrow:border-r-0"
           >
             <div className="lbl flex items-center justify-between px-6 py-4 text-dim narrow:px-5">
               <i className="px-2 py-[5px] not-italic text-white" style={{ background: m.color }}>{m.n}</i><span>{m.tag}</span>
             </div>
             <div className="h-[190px]" style={{ background: m.art }} />
             <div className="relative px-6 pb-7 narrow:px-5">
-              <div className="relative -mt-7 grid size-14 place-items-center rounded-[10px] text-[26px] transition-transform duration-[400ms] ease-[cubic-bezier(.2,.8,.2,1)] motion-safe:group-hover:scale-[1.18]" style={{ background: m.color }}>{m.icon}</div>
+              <div className="relative -mt-7 grid size-14 place-items-center rounded-[10px] text-[26px] transition-transform duration-[400ms] ease-[cubic-bezier(.2,.8,.2,1)] motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:-rotate-6" style={{ background: m.color }}><m.icon className="size-7 text-white" /></div>
               <h3 className="wide-md mb-2 mt-4 text-[27px] font-bold">{m.title}</h3>
               <p className="mb-5 text-mut">{m.body}</p>
-              <span className="lbl text-mut">{m.cta} ↗</span>
+              <span className="lbl inline-flex gap-1 text-mut">{m.cta} <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-1">↗</span></span>
             </div>
           </a>
         ))}

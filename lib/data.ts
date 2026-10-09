@@ -1,3 +1,6 @@
+import { GraduationCap, BrainCircuit, Terminal, FlaskConical, ReceiptText } from "lucide-react";
+import { SiGithub } from "react-icons/si";
+
 export const LINKS = {
   github: "https://github.com/JeffZl",
   linkedin: "https://www.linkedin.com/in/jeffly-jeffly/",
@@ -58,17 +61,17 @@ export const PROJECTS = [
 
 export const BACKGROUND = [
   {
-    label: "Education", icon: "🎓", title: "Education",
+    label: "Education", icon: GraduationCap, title: "Education",
     lines: ["S1 Computer Science, Universitas Tarumanagara, 2024 – 2028", "SMA Westin School, 2021 – 2024"],
     cta: { text: "View LinkedIn", href: LINKS.linkedin, external: true },
   },
   {
-    label: "AI certificates", icon: "🧠", title: "AI & ML", strong: true,
+    label: "AI certificates", icon: BrainCircuit, title: "AI & ML", strong: true,
     lines: ["TensorFlow for Deep Learning Bootcamp, Udemy, 2026", "Azure AI Fundamentals (AI-900), GreatNusa, 2026."],
     cta: { text: "View on LinkedIn", href: LINKS.linkedin, external: true },
   },
   {
-    label: "Systems certificate", icon: "🐧", title: "Linux",
+    label: "Systems certificate", icon: Terminal, title: "Linux",
     lines: ["Red Hat Certified System Administrator (RHCSA), Red Hat, 2025", "Docker, Prometheus and Grafana in practice on a restaurant POS."],
     cta: { text: "See the POS", href: "#family", external: false },
   },
@@ -82,9 +85,9 @@ infra       linux docker git prometheus grafana
 spoken      english indonesian chinese`;
 
 export const MORE = [
-  { n: "04", tag: "Research", icon: "🧠", color: "#14b8a6", art: "linear-gradient(135deg,#052e2b,#2dd4bf)", title: "Avian Species Classifier", body: "Co-authored computer vision paper using Bisection Otsu segmentation and SVM. Cuts threshold search from O(L) to O(log L), reaching 83.3% test accuracy and 0.832 macro F1.", cta: "Read more", href: "#" },
-  { n: "05", tag: "Point of sale", icon: "🧾", color: "#e5533d", art: "linear-gradient(135deg,#4a1d6e,#e0457b)", title: "Restaurant POS", body: "Built a point-of-sale system for a restaurant that made day-to-day operations smoother, run with Docker and monitored with Prometheus and Grafana. Client details kept private.", cta: "Details on request", href: "#" },
-  { n: "06", tag: "GitHub", icon: "💻", color: "#8b5cf6", art: "linear-gradient(135deg,#1e1b4b,#8b5cf6)", title: "More on GitHub", body: "Other experiments, coursework and repositories.", cta: "Open GitHub", href: LINKS.github },
+  { n: "04", tag: "Research", icon: FlaskConical, color: "#14b8a6", art: "linear-gradient(135deg,#052e2b,#2dd4bf)", title: "Avian Species Classifier", body: "Co-authored computer vision paper using Bisection Otsu segmentation and SVM. Cuts threshold search from O(L) to O(log L), reaching 83.3% test accuracy and 0.832 macro F1.", cta: "Read more", href: "#" },
+  { n: "05", tag: "Point of sale", icon: ReceiptText, color: "#e5533d", art: "linear-gradient(135deg,#4a1d6e,#e0457b)", title: "Restaurant POS", body: "Built a point-of-sale system for a restaurant that made day-to-day operations smoother, run with Docker and monitored with Prometheus and Grafana. Client details kept private.", cta: "Details on request", href: "#" },
+  { n: "06", tag: "GitHub", icon: SiGithub, color: "#8b5cf6", art: "linear-gradient(135deg,#1e1b4b,#8b5cf6)", title: "More on GitHub", body: "Other experiments, coursework and repositories.", cta: "Open GitHub", href: LINKS.github },
 ];
 
 export const FOOTER = [

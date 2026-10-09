@@ -5,12 +5,13 @@ export const Accent = ({ children }: { children: ReactNode }) => (
 );
 
 export function Btn({
-  href, children, filled, external, className = "",
-}: { href: string; children: ReactNode; filled?: boolean; external?: boolean; className?: string }) {
+  href, children, filled, external, download, className = "",
+}: { href: string; children: ReactNode; filled?: boolean; external?: boolean; download?: string; className?: string }) {
   return (
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      {...(download ? { download } : {})}
       className={`lbl inline-flex items-center justify-center gap-2.5 border px-[22px] py-[17px] ${
         filled ? "border-inv bg-inv text-invt" : "border-fg"
       } ${className}`}
