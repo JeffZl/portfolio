@@ -1,0 +1,15 @@
+// components/Reveal.tsx
+"use client";
+import { motion, type HTMLMotionProps } from "motion/react";
+
+export default function Reveal({ delay = 0, ...props }: HTMLMotionProps<"div"> & { delay?: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1], delay }}
+      {...props}
+    />
+  );
+}
