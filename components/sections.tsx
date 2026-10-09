@@ -12,22 +12,34 @@ export function Hero() {
     <div>
       <SectionBar n="01" title="Portfolio" right="Internship candidate · Open to work" />
       <section className="border-b border-line px-10 pb-14 pt-20 text-center narrow:px-5 narrow:pb-10 narrow:pt-14">
-        {/* Replace this placeholder with your photo, e.g. <Image src="/photo.jpg" ... /> */}
-        <div style={{ "--d": 0 } as CSSProperties} className="rise mx-auto mb-[22px] grid size-52 place-items-center overflow-hidden rounded-xl bg-[linear-gradient(160deg,#3b6cf5,#1d3a8a)] ring-1 ring-line">
+        <div
+          style={{ "--d": 0 } as CSSProperties}
+          className="rise mx-auto mb-[22px] size-52 overflow-hidden rounded-xl ring-1 ring-line"
+        >
+          <Image
+            src="/photo.jpg"
+            alt="My Photo"
+            width={416}
+            height={416}
+            priority
+            className="size-full object-cover"
+          />
+        </div>
+        {/* <div style={{ "--d": 0 } as CSSProperties} className="rise mx-auto mb-[22px] grid size-52 place-items-center overflow-hidden rounded-xl bg-[linear-gradient(160deg,#3b6cf5,#1d3a8a)] ring-1 ring-line">
           <svg viewBox="0 0 100 100" className="size-full" role="img" aria-label="Photo placeholder">
             <circle cx="50" cy="38" r="16" fill="rgba(255,255,255,.85)" />
             <path d="M16 100C16 72 34 62 50 62s34 10 34 38z" fill="rgba(255,255,255,.85)" />
           </svg>
-        </div>
+        </div> */}
         <div style={{ "--d": 1 } as CSSProperties} className="rise wide-md inline-flex items-center gap-3 text-2xl font-bold">
           <i className="lbl bg-[#2563eb] px-2 py-[5px] not-italic text-white">01</i>
-          <div>Jeff<span className="text-blue">ly</span></div>
+          <div>Jeffly</div>
         </div>
         <h1 style={{ "--d": 2 } as CSSProperties} className="rise wide mx-auto mb-7 mt-[34px] max-w-[860px] text-[clamp(38px,6vw,72px)] font-bold leading-[1.05] tracking-[-.03em]">
           I build web, mobile and <Accent>AI</Accent> projects that ship.
         </h1>
         <p style={{ "--d": 3 } as CSSProperties} className="rise mx-auto mb-[38px] max-w-[560px] text-[19px] text-mut">
-          Computer science student at Universitas Tarumanagara. Full-stack apps with Next.js and Flutter, computer vision research, and Linux systems. Looking for an IT internship.
+          Computer science student at Universitas Tarumanagara. Full-stack apps with Next.js, computer vision research, and Linux systems. Looking for an IT internship.
         </p>
         <div style={{ "--d": 4 } as CSSProperties} className="rise flex flex-wrap justify-center gap-3">
           <Btn href={LINKS.cvId} download="Jeffly_CV.pdf" filled className="narrow:flex-auto">↓ Download CV</Btn>
