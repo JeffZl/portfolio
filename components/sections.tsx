@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import { BACKGROUND, FOOTER, LINKS, MORE, PROJECTS, SKILLS, STACK } from "@/lib/data";
 import { Accent, AppMock, Btn, SectionBar, SectionTitle } from "./ui";
 import Reveal from "./Reveal";
+import Image from "next/image";
 
 const tag = "!tracking-[.06em] border border-line px-[9px] py-1 font-mono text-[11px] font-semibold uppercase text-mut";
 
@@ -26,7 +27,7 @@ export function Hero() {
           I build web, mobile and <Accent>AI</Accent> projects that ship.
         </h1>
         <p style={{ "--d": 3 } as CSSProperties} className="rise mx-auto mb-[38px] max-w-[560px] text-[19px] text-mut">
-          Computer science student at Universitas Tarumanagara. Full-stack apps with Next.js and Flutter, computer vision research, and Linux systems (RHCSA). Looking for an IT internship.
+          Computer science student at Universitas Tarumanagara. Full-stack apps with Next.js and Flutter, computer vision research, and Linux systems. Looking for an IT internship.
         </p>
         <div style={{ "--d": 4 } as CSSProperties} className="rise flex flex-wrap justify-center gap-3">
           <Btn href={LINKS.cvId} download="Jeffly_CV.pdf" filled className="narrow:flex-auto">↓ Download CV</Btn>
@@ -47,7 +48,15 @@ export function Hero() {
       <div className="lbl flex justify-between gap-3 border-b border-line px-10 py-[18px] text-mut narrow:px-5">
         <span>Selected work — preview</span><span>Screenshots</span>
       </div>
-      <AppMock art="linear-gradient(135deg,#2a4f9e,#e8cf9a 55%,#8a3d2a)" className="h-[430px] border-b border-line narrow:h-[260px]" />
+      <div className={`relative overflow-hidden bg-[#1b1c21] h-[430px] border-b border-line narrow:h-[260px]`}>
+        <Image
+          src={`/tax.png`}
+          alt={`${"Taxeling Project"} screenshot`}
+          fill
+          className="object-contain"
+        />
+      </div>
+      {/* <AppMock art="linear-gradient(135deg,#2a4f9e,#e8cf9a 55%,#8a3d2a)" className="h-[430px] border-b border-line narrow:h-[260px]" /> */}
     </div>
   );
 }
@@ -80,7 +89,19 @@ export function Projects() {
             <div className="lbl flex justify-between gap-3 border-b border-line px-10 py-[18px] text-mut narrow:px-5">
               <span>{p.caption}</span><span>{String(i + 1).padStart(2, "0")}</span>
             </div>
-            <AppMock art={p.art} rows={i === 0 ? 3 : 2} className={`${i === 0 ? "h-[440px]" : "h-[300px]"} narrow:h-[260px]`} />
+            {p.image ? (
+              <div className={`relative overflow-hidden bg-[#1b1c21] ${i === 0 ? "h-[440px]" : "h-[300px]"} narrow:h-[260px]`}>
+                <Image
+                  src={p.image}
+                  alt={`${p.caption} screenshot`}
+                  fill
+                  sizes={i === 0 ? "(max-width: 1280px) 100vw, 1280px" : "(max-width: 900px) 100vw, 640px"}
+                  className="object-contain"
+                />
+              </div>
+            ) : (
+              <AppMock art={p.art} rows={i === 0 ? 3 : 2} className={`${i === 0 ? "h-[440px]" : "h-[300px]"} narrow:h-[260px]`} />
+            )}
             <div className="px-10 pb-[30px] pt-[22px] text-[15px] text-mut narrow:px-5 narrow:pb-6 narrow:pt-[18px]">
               <p className="mb-3.5">{p.body}</p>
               <div className="flex flex-wrap gap-1.5">{p.tags.map((t) => <span key={t} className={tag}>{t}</span>)}</div>
@@ -151,7 +172,19 @@ export function MoreWork() {
               <div className="lbl flex items-center justify-between px-6 py-4 text-dim narrow:px-5">
                 <i className="px-2 py-[5px] not-italic text-white" style={{ background: m.color }}>{m.n}</i><span>{m.tag}</span>
               </div>
-              <div className="h-[190px]" style={{ background: m.art }} />
+              {m.image ? (
+                <div className="relative h-[190px] overflow-hidden">
+                  <Image
+                    src={m.image}
+                    alt={`${m.title} preview`}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 427px"
+                    className="object-contain"
+                  />
+                </div>
+              ) : (
+                <div className="h-[190px]" style={{ background: m.art }} />
+              )}
               <div className="relative px-6 pb-7 narrow:px-5">
                 <div className="relative -mt-7 grid size-14 place-items-center rounded-[10px] text-[26px] transition-transform duration-[400ms] ease-[cubic-bezier(.2,.8,.2,1)] motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:-rotate-6" style={{ background: m.color }}><m.icon className="size-7 text-white" /></div>
                 <h3 className="wide-md mb-2 mt-4 text-[27px] font-bold">{m.title}</h3>

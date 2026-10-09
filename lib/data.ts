@@ -44,18 +44,21 @@ export const PROJECTS = [
     body: "A web app that automates monthly income tax (PPh 21) calculation under PP 58/2023 (TER categories A, B, C), including December reconciliation. Exports PDF tax receipts and Coretax/DJP-ready XML, and runs calculations in the browser for instant results.",
     tags: ["Next.js", "TypeScript", "Supabase", "Zustand", "React-PDF", "Tailwind"],
     art: "linear-gradient(135deg,#1c3a73,#d8b46a 60%,#4a2a24)",
+    image: "/tax.png"
   },
   {
     caption: "WanderWhale — travel planning app",
     body: "A Flutter app for trip planning and booking, with live hotel and flight availability from the Amadeus API, a simulated payment flow, and a Node.js/Express backend with Firebase Auth and Firestore.",
     tags: ["Flutter", "Dart", "Node.js", "Firebase", "Amadeus API"],
     art: "radial-gradient(circle at 60% 40%,#2e8bff,#07090f 60%)",
+    image: "/travel_app.jpg"
   },
   {
     caption: "Cirqulate — X (Twitter) clone",
     body: "A full-stack social network with authentication, profiles, posts, quotes, trending topics, real-time messaging and notifications, in dark and light themes.",
     tags: ["Next.js", "TypeScript", "MongoDB", "Cloudinary"],
     art: "linear-gradient(135deg,#2b2b36,#6a7aa8)",
+    image: "/cirqulate.png"
   },
 ];
 
@@ -81,13 +84,13 @@ export const STACK = `languages   python typescript c++ sql
 frontend    next.js react flutter
 backend     supabase mongodb node.js
 ai          pytorch tensorflow opencv
-infra       linux docker git prometheus grafana
+infra       ubuntu linux-mint docker git prometheus grafana
 spoken      english indonesian chinese`;
 
 export const MORE = [
-  { n: "04", tag: "Research", icon: FlaskConical, color: "#14b8a6", art: "linear-gradient(135deg,#052e2b,#2dd4bf)", title: "Avian Species Classifier", body: "Co-authored computer vision paper using Bisection Otsu segmentation and SVM. Cuts threshold search from O(L) to O(log L), reaching 83.3% test accuracy and 0.832 macro F1.", cta: "Read more", href: "#" },
-  { n: "05", tag: "Point of sale", icon: ReceiptText, color: "#e5533d", art: "linear-gradient(135deg,#4a1d6e,#e0457b)", title: "Restaurant POS", body: "Built a point-of-sale system for a restaurant that made day-to-day operations smoother, run with Docker and monitored with Prometheus and Grafana. Client details kept private.", cta: "Details on request", href: "#" },
-  { n: "06", tag: "GitHub", icon: SiGithub, color: "#8b5cf6", art: "linear-gradient(135deg,#1e1b4b,#8b5cf6)", title: "More on GitHub", body: "Other experiments, coursework and repositories.", cta: "Open GitHub", href: LINKS.github },
+  { n: "04", tag: "Research", icon: FlaskConical, color: "#14b8a6", art: "linear-gradient(135deg,#052e2b,#2dd4bf)", title: "Avian Species Classifier", body: "Co-authored computer vision paper using Bisection Otsu segmentation and SVM. Cuts threshold search from O(L) to O(log L), reaching 83.3% test accuracy and 0.832 macro F1.", cta: "Read more", href: "#",  image: "/paper_ss.jpeg"},
+  { n: "05", tag: "Point of sale", icon: ReceiptText, color: "#e5533d", art: "linear-gradient(135deg,#4a1d6e,#e0457b)", title: "Restaurant POS", body: "Built a point-of-sale system for a restaurant that made day-to-day operations smoother, run with Docker and monitored with Prometheus and Grafana. Client details kept private.", cta: "Details on request", href: "#", image: "/pos.png" },
+  { n: "06", tag: "GitHub", icon: SiGithub, color: "#8b5cf6", art: "linear-gradient(135deg,#1e1b4b,#8b5cf6)", title: "More on GitHub", body: "Other experiments, coursework and repositories.", cta: "Open GitHub", href: LINKS.github, image: "/github_acc.png" },
 ];
 
 export const FOOTER = [
